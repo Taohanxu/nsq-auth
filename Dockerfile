@@ -8,7 +8,7 @@ ADD . .
 
 ENV CGO_ENABLED=0 \
     GOOS=linux \
-    GOARCH=amd64
+    GOARCH=arm64
 
 RUN go build -ldflags="-w -s" -o zhimiao-app
 
