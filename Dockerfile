@@ -1,4 +1,4 @@
-FROM golang:1.19.3-alpine3.16@sha256:c1b7c8fb2603c387a668768f4a7fda4c2adb077c00a97b596ff6569f7a4c20ae AS build
+FROM golang:1.19.3-alpine3.16 AS build
 
 LABEL maintainer="mail@xiaoliu.org"
 
@@ -12,7 +12,7 @@ ENV CGO_ENABLED=0 \
 
 RUN go build -ldflags="-w -s" -o zhimiao-app
 
-FROM zhimiao/alpine:latest AS prod
+FROM alpine:3.16.2@sha256:ed73e2bee79b3428995b16fce4221fc715a849152f364929cdccdc83db5f3d5c AS prod
 
 WORKDIR /zhimiao
 
