@@ -6,8 +6,7 @@ WORKDIR /go/src/app
 
 ADD . .
 
-ENV GOPROXY="https://goproxy.cn,direct" \
-    CGO_ENABLED=0 \
+ENV CGO_ENABLED=0 \
     GOOS=linux \
     GOARCH=amd64
 
